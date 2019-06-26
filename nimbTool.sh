@@ -30,24 +30,23 @@ function output() {
 ##########
 function create()
 {
-	echo "create - $cmd"
   nimbusapp devops:1.1.7.2 $cmd
-  nimbusapp jira:8.0.2 $1
-  nimbusapp mfconnect:4.1.0-beta8 $1
-  nimbusapp intellij:1.1.7.2 $1
-  nimbusapp octane:12.60.47.88 $1
-  nimbusapp alm:12.61 $1
-  nimbusapp aos:1.1.7 $1
-  nimbusapp sv:5.0.1 $1
-  nimbusapp ssc:18.10 $1
-  nimbusapp sca:18.20 $1
-  nimbusapp ppm-octane:9.50-12.60.21.98 $1
-  nimbusapp mc:3.1 $1
-  nimbusapp leanft-chrome:14.52 $1
-  nimbusapp da:6.2.1 $1
-  nimbusapp autopass:10.8.0 $1
-  nimbusapp auditworkbench:18.20 $1
-  nimbusapp ppm:9.51 $1
+  nimbusapp jira:8.0.2 $cmd
+  nimbusapp mfconnect:4.1.0-beta8 $cmd
+  nimbusapp intellij:1.1.7.2 $cmd
+  nimbusapp octane:12.60.47.88 $cmd
+  nimbusapp alm:12.61 $cmd
+  nimbusapp aos:1.1.7 $cmd
+  nimbusapp sv:5.0.1 $cmd
+  nimbusapp ssc:18.10 $cmd
+  nimbusapp sca:18.20 $cmd
+  nimbusapp ppm-octane:9.50-12.60.21.98 $cmd
+  nimbusapp mc:3.1 $cmd
+  nimbusapp leanft-chrome:14.52 $cmd
+  nimbusapp da:6.2.1 $cmd
+  nimbusapp autopass:10.8.0 $cmd
+  nimbusapp auditworkbench:18.20 $cmd
+  nimbusapp ppm:9.51 $cmd
 }
 
 if [ "$#" -ne 1 ] 
@@ -56,5 +55,5 @@ then
 else
   cmd=$1
   create $cmd
-  #docker-app render "../nimbus-dockerapp/$1.dockerapp" | docker-compose -p ${filename%.*} -f - $2
+  #docker-app render "../nimbus-dockerapp/$cmd.dockerapp" | docker-compose -p ${filename%.*} -f - $2
 fi
