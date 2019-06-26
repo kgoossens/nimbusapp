@@ -20,6 +20,10 @@ function usage()
    output -e "  help     Prints this help message"
 }
 
+function output() {
+  echo "$@"
+}
+
 ##########
 # create #
 ##########
