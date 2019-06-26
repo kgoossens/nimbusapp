@@ -1,5 +1,6 @@
 #!/bin/bash
 
+var cmd='ps'
 function usage()
 {
    output "Usage: createnimbusapp COMMAND"
@@ -29,7 +30,8 @@ function output() {
 ##########
 function create()
 {
-  nimbusapp devops:1.1.7.2 $1
+	echo "create - $cmd"
+  nimbusapp devops:1.1.7.2 $cmd
   nimbusapp jira:8.0.2 $1
   nimbusapp mfconnect:4.1.0-beta8 $1
   nimbusapp intellij:1.1.7.2 $1
@@ -52,6 +54,7 @@ if [ "$#" -ne 1 ]
 then
   usage
 else
-  create
+  cmd=$1
+  create $cmd
   #docker-app render "../nimbus-dockerapp/$1.dockerapp" | docker-compose -p ${filename%.*} -f - $2
 fi
