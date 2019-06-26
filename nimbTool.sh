@@ -20,17 +20,6 @@ function usage()
    output -e "  help     Prints this help message"
 }
 
-
-if [ "$#" -ne 1 ] 
-then
-  usage()
-else
-  create()
-  #docker-app render "../nimbus-dockerapp/$1.dockerapp" | docker-compose -p ${filename%.*} -f - $2
-fi
-
-
-
 ##########
 # create #
 ##########
@@ -54,3 +43,11 @@ function create()
   nimbusapp auditworkbench:18.20 $1
   nimbusapp ppm:9.51 $1µ
 }
+
+if [ "$#" -ne 1 ] 
+then
+  usage()
+else
+  create()
+  #docker-app render "../nimbus-dockerapp/$1.dockerapp" | docker-compose -p ${filename%.*} -f - $2
+fi
