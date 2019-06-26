@@ -45,13 +45,13 @@ function create()
   nimbusapp da:6.2.1 $1
   nimbusapp autopass:10.8.0 $1
   nimbusapp auditworkbench:18.20 $1
-  nimbusapp ppm:9.51 $1µ
+  nimbusapp ppm:9.51 $1
 }
 
 if [ "$#" -ne 1 ] 
 then
-  usage()
+  usage
 else
-  create()
+  create
   #docker-app render "../nimbus-dockerapp/$1.dockerapp" | docker-compose -p ${filename%.*} -f - $2
 fi
