@@ -1,6 +1,6 @@
 #!/bin/bash
 
-var cmd='ps'
+cmd='ps'
 function usage()
 {
    output "Usage: createnimbusapp COMMAND"
@@ -54,6 +54,6 @@ then
   usage
 else
   cmd=$1
-  create $cmd
+  create
   #docker-app render "../nimbus-dockerapp/$cmd.dockerapp" | docker-compose -p ${filename%.*} -f - $2
 fi
